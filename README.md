@@ -21,6 +21,7 @@ Lien vers votre dépôt Git, que je pourrai clôner.
 Votre dépôt Git contiendra un fichier `README.md` dans lequel vous indiquerez :
 
 - La commande `composer` utilisée pour créer votre projet avec Symfony 4
+- La commande à utiliser pour voir la version courante de Symfony pour votre projet
 - La commande à utiliser pour voir les routes disponibles dans l'application
 - La commande à utiliser pour créer une entité
 - La commande à utiliser pour créer les données de tests (fixtures) dans la base de données
@@ -32,6 +33,8 @@ Votre dépôt Git contiendra un fichier `README.md` dans lequel vous indiquerez 
 
 ---
 > *Indiquez dans votre fichier `README.md` la commande composer à utiliser pour créer un projet Symfony 4*
+---
+> *Indiquez dans votre fichier `README.md` la commande à utiliser pour voir la version courante de Symfony pour votre projet*
 
 Vous souhaitez présenter pour les utilisateurs du site une liste de templates disponibles pour créer une carte de visite numérique.
 
