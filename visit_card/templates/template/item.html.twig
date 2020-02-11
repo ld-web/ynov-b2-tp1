@@ -1,0 +1,24 @@
+<div class="card col-sm-12 col-md-6 col-lg-3 mb-4">
+  <img
+    src="{{ template.preview }}"
+    class="card-img-top"
+    alt="{{ template.name }}"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ template.name }}</h5>
+
+    {# Exemple en utilisant un template externe, en lui transmettant une variable
+      https://twig.symfony.com/doc/3.x/functions/include.html
+    #}
+    {{ include('template/active.html.twig', { active: template.active })}}
+    
+    {# Exemple en utilisant directement une condition
+      https://twig.symfony.com/doc/3.x/tags/if.html
+    #}
+    {% if template.premium %}
+    <h6><span class="badge badge-pill badge-success">ACCES PREMIUM</span></h6>
+    {% endif %}
+
+    <p class="card-text">{{ template.description }}</p>
+  </div>
+</div>

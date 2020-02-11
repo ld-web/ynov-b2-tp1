@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Bienvenue !{% endblock %}
+
+{% block body %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Cartes de visite numériques</h1>
+    <p class="lead">Créez vos cartes en lignes à partir de nos templates</p>
+    <div>
+      <a href="{{ path('templates_list') }}" class="btn btn-primary btn-lg">Voir les templates</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
