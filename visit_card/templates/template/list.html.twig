@@ -5,10 +5,20 @@
 {% block body %}
 <div class="container">
   <h1 class="mt-4 mb-3">Nos templates</h1>
-  <div class="row">
-    {% for template in templates %}
-      {{ include('template/item.html.twig') }}
-    {% endfor %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-3">
+        {{ include('template/categories.html.twig') }}
+      </div>
+      <div class="col-sm-12 col-md-9">
+        <div class="row">
+          {% for template in templates %}
+            {{ include('template/item.html.twig') }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

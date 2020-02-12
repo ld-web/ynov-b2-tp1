@@ -284,3 +284,38 @@ On va définir un template de base `base.html.twig`, qui inclura une navigation 
 Pour la page d'accueil, allons à l'essentiel : un [jumbotron](https://getbootstrap.com/docs/4.4/components/jumbotron/) fourni par Bootstrap fera l'affaire.
 
 #### Page des templates
+
+Il faut :
+
+- Récupérer les templates depuis le contrôleur
+- Transmettre les données à la vue
+
+Pour récupérer les templates de la base de données, on va injecter le Repository dans le contrôleur.
+
+Avec un repository, on bénéficie de fonctions fournies par l'ORM pour requêter sur une entité.
+
+>Fichier : src/Controller/TemplateController.php
+
+```php
+//...
+
+/**
+  * @Route("/templates", name="templates_list")
+  */
+public function list(CardTemplateRepository $cardTemplateRepository)
+{
+  $cardTemplates = $cardTemplateRepository->findAll();
+
+  return $this->render('template/list.html.twig', [
+    'templates' => $cardTemplates
+  ]);
+}
+
+//...
+```
+
+Pour la vue, on a séparé en plusieurs parties, le template principal étant `list.html.twig`. Je pense que l'architecture est assez claire (`item` et `categories` séparés dans des fichiers distincts).
+
+Dans `item.html.twig`, vous aurez un exemple d'inclusion de template externe avec le champ `active` et un autre exemple avec `if` pour le champ `premium`.
+
+>Il n'est pas obligatoire de séparer à ce point (exemple du champ `active`). Il s'agit d'un exemple d'appel à un template externe et auquel on fournit une variable
